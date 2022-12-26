@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="container">
+        <div class="home">
+            <button routerLink="" type="text" class="btn sign-up-btn">Home</button>
+
+        </div>
+
+        <form [formGroup]="loginUser">
+            <label>Username</label>
+            <div>
+                <span *ngIf="!loginUser.get('username')?.valid && loginUser.get('username')?.touched" style="color:red ;">Please enter a valid username</span>
+                <input  formControlName="username" type="text">
+            </div> 
+            <label>Password</label>
+            <div>
+                <span *ngIf="!loginUser.get('password')?.valid && loginUser.get('password')?.touched" style="color:red ;">Password cannot be empty</span>
+                <input formControlName="password" type="password">
+            </div> 
+            
+            <button type="submit" [disabled]="!loginUser.valid" (click)="login()">Sign In</button>
+        </form>
+    </body>
+</html>

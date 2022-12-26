@@ -1,0 +1,58 @@
+.logo{
+    width: 50px;
+    filter: invert(49%) sepia(95%) saturate(2103%) hue-rotate(179deg) brightness(97%) contrast(93%);
+    margin-top: 40px;
+}
+
+.active{
+    filter: invert(49%) sepia(95%) saturate(2103%) hue-rotate(179deg) brightness(97%) contrast(93%);
+}
+
+.sidebar-item, .button{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px;
+    margin-left: 0;
+    padding-left: 0;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.sidebar-item:hover{
+    background-color: rgba(0, 0, 0, 0.09);
+    cursor: pointer;
+}
+
+.sidebar-item-icon{
+    width: 28px;
+    margin-right: 1px;
+}
+
+.button, .logout-btn{
+    width: 212px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    justify-content: center;
+    
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #146fac;
+}
+
+.logout-btn{
+    margin: 20px;
+    margin-left: 75vh;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.logout-btn:hover{
+    cursor: pointer;
+    background-color: rgb(71, 71, 71);
+}

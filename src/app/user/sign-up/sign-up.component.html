@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="container">
+    <form [formGroup]="form" (ngSubmit)="signUp()">
+
+        <label for="userName">Username</label>
+        <div>
+            <span *ngIf="!form.get('userName')?.valid && form.get('userName')?.touched" style="color:red ;">Please
+                enter a valid username</span>
+            <input [formControlName]="'userName'" type="text" autofocus>
+        </div>
+        <label for="firstName">First Name</label>
+        <div>
+            <span *ngIf="!form.get('firstName')?.valid && form.get('firstName')?.touched" style="color:red ;">Please
+                enter your first name</span>
+            <input [formControlName]="'firstName'" type="text">
+        </div>
+
+        <label for="lastName">Last Name</label>
+        <div>
+            <span *ngIf="!form.get('lastName')?.valid && form.get('lastName')?.touched" style="color:red ;">Please enter
+                your last name</span>
+            <input [formControlName]="'lastName'" type="text">
+        </div>
+        <label for="dob">Date Of Birth</label>
+       <div>
+             <mat-form-field>
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" [formControlName]="'dob'">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+       </div>
+        <label for="contactNumber">Contact number</label>
+        <div>
+            <span *ngIf="!form.get('contactNumber')?.valid  && form.get('contactNumber')?.touched"
+                style="color:red ;">Please enter a valid Number</span>
+            <input [formControlName]="'contactNumber'" type="text" required>
+        </div>
+        <label for="password">Password</label>
+        <div>
+            
+            <span *ngIf="!form.get('password')?.valid && form.get('password')?.touched" style="color:red ;">Password should be min 8 characters</span>
+            <input [formControlName]="'password'" type="password">
+        </div>
+
+        <input type="submit" [disabled]="!form.valid" value="Sign up">
+    </form>
+</body>
+
+</html>

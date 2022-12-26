@@ -1,0 +1,26 @@
+<body>
+    <main class="main">
+        <div class="main-container">
+            <mat-card class="retweetForm" *ngFor="let retweet of reTweets">
+                <mat-card-header class="header">
+                    <mat-card-title class="svg"><img src="assets/svgicons/profile.svg" class="sidebar-item-icon"></mat-card-title>
+                    <mat-card-subtitle>{{retweet.userName}}</mat-card-subtitle>
+                    <span class="tweetDate">
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                      {{retweet.localDate}}
+                    </span>
+                    <mat-card-actions class="retweetDelete" align="end" *ngIf="DeleteOptionEnable">
+                        <button mat-button  (click)="deleteReTweet(retweet.retweetid)"><img src="assets/svgicons/delete.svg"
+                           class="deletesvg" ></button>
+                       
+                      </mat-card-actions>
+                </mat-card-header>
+                <mat-card-content  class="RetweetText">
+                    <span class="RetweetTextfont">{{retweet.reTweet}}</span>
+                </mat-card-content>
+              
+            </mat-card>
+        </div>
+    </main>
+</body>
+

@@ -1,0 +1,38 @@
+<body>
+    <header class="sidebar">
+      <app-header-bar></app-header-bar>
+    </header>
+  
+    <main class="main">
+      <mat-card class="tweet-card" *ngFor="let tweet of tweetPost">
+        <mat-card-header>
+          <mat-card-title><img src="assets/svgicons/profile.svg" class="sidebar-item-icon"> <span class="tweetDate">
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; {{tweet.localDate}}
+            </span></mat-card-title>
+          <mat-card-subtitle>{{tweet.username}}
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <button mat-button [routerLink]="'/updateTweet'" [queryParams]="{tweetid:tweet.tweetid}"><img
+                src="assets/svgicons/edit.svg" class="sidebar-item-icon"></button>
+            <button mat-button (click)="deletePost(tweet.tweetid)"><img src="assets/svgicons/delete.svg"
+                class="sidebar-item-icon"></button>
+          </mat-card-subtitle>
+  
+        </mat-card-header>
+        <mat-card-content class="tweetpart">
+          <p class="tweetMessage">{{tweet.tweet}}</p>
+  
+        </mat-card-content>
+        <mat-card-actions class="likeposition">
+          <span class="likes">
+            <app-likes [tweetid]="tweet.tweetid"></app-likes>
+  
+          </span>
+  
+        </mat-card-actions>
+        <mat-card-content class="retweet">
+          <app-retweets [tweetid]='tweet.tweetid' [DeleteOptionEnable]=true></app-retweets>
+        </mat-card-content>
+      </mat-card>
+    </main>
+  </body>

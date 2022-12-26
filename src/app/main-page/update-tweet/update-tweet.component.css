@@ -1,0 +1,44 @@
+.example-card {
+    max-width: 400px;
+  }
+.main{
+	margin-left: 70vh;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 20vh;
+}
+
+body, html{
+    height: 100vh;
+    font-family: Roboto;
+}
+
+
+
+form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+    width: 500px;
+}
+input[type=text], input[type=newTweet], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;	
+}
+input[type="submit"] {
+	background-color: #1d9bf0;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}

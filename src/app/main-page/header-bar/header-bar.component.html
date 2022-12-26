@@ -1,0 +1,28 @@
+<span class="sidebar-container">
+    <span>
+        <a>
+            <img src="assets/svgicons/twitter.svg" class="logo">
+        </a>
+        <span class="sidebar-item active">
+            <img src="assets/svgicons/home.svg" class="sidebar-item-icon ">
+            <span [routerLink]="'/home'" class="icon-label">Home</span>
+        </span> 
+        <span class="sidebar-item ">
+            <img src="assets/svgicons/tweet.png" class="sidebar-item-icon ">
+            <span [routerLink]="'/tweets'" class="icon-label">Tweets</span>
+        </span>
+
+        <span class="sidebar-item">
+            <img src="assets/svgicons/users.png" class="sidebar-item-icon ">
+            <span [routerLink]="'/users'" class="icon-label">Users</span>
+        </span> 
+        
+        <span class="sidebar-item">
+            <img src="assets/svgicons/password.png" class="sidebar-item-icon">
+            <span [routerLink]="'/changePassword'" class="icon-label">Change Password</span>
+        </span>
+        <span class="logout-btn">
+            <span (click)="logout()" class="icon-label">Log Out</span>
+        </span>
+    </span>
+</span>

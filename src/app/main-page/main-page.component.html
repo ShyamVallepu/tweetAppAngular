@@ -1,0 +1,63 @@
+<html>
+<header>
+    <app-header-bar>
+        <router-outlet></router-outlet>
+    </app-header-bar>
+</header>
+<body>
+    <main class="main">
+        <div class="main-container">
+            <div class="tweet">
+                <div>Replying to {{username}}</div>
+            </div>
+            <div class="tweet-form">
+                <div>
+                    <form [formGroup]="tweetForm" (ngSubmit)="createPost()">
+                        <textarea [formControlName]="'tweetText'" id="post-form-text-area" class="post-tweet-text-area"
+                            name="post-tweet" rows="2" cols="50" placeholder="Post Tweet"></textarea>
+                        <input type="submit" [disabled]="!tweetForm.valid" value="Post">
+                    </form>
+                </div>
+            </div>
+            <mat-card class="tweet-card" *ngFor="let tweet of tweet">
+                <mat-card-header class="header">
+                    <mat-card-title><img src="assets/svgicons/profile.svg" class="sidebar-item-icon"></mat-card-title>
+                    <mat-card-subtitle>{{tweet.username}}</mat-card-subtitle>
+                    <span class="tweetDate">
+                        <!-- &nbsp; &nbsp;&nbsp;  -->
+                      {{tweet.localDate}}
+                    </span>
+                </mat-card-header>
+                <mat-card-content class="tweetpart" >
+                    <p class="tweetMessage">{{tweet.tweet}}</p>                   
+                </mat-card-content>
+                
+                <mat-card-actions class="likeposition">
+                    <span class="likes">
+                        <app-likes [tweetid]="tweet.tweetid"></app-likes>
+                    </span>
+                </mat-card-actions>
+                <mat-card-content>
+                    <mat-card class="ReTweetForm">
+                        <div >
+                            <div>
+                                <form [formGroup]="reTweetForm" (ngSubmit)="createRetweet(tweet.tweetid)">
+                                    <textarea [formControlName]="'retweet'" id="post-form-text-area"
+                                        class="post-tweet-text-area" name="post-tweet" rows="2" cols="50"
+                                        placeholder="Retweet"></textarea>
+                                    <input type="submit" [disabled]="!reTweetForm.valid" value="ReTweet">
+                                </form>
+                            </div>
+                        </div>
+                        <span>
+                            <app-retweets [tweetid]="tweet.tweetid" [DeleteOptionEnable]=false></app-retweets>
+                        </span>
+                        
+                    </mat-card>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </main>
+</body>
+
+</html>

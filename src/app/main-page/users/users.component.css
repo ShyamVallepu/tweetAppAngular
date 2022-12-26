@@ -1,0 +1,10 @@
+.container{
+    place-items: center;
+    padding-right: 150vh;
+    margin-top: 5vh;
+    max-width: 2000px;
+}
+.search{
+    padding-right: 40vh;
+    max-width: 900vh;
+}

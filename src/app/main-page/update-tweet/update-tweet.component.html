@@ -1,0 +1,18 @@
+<html>
+<body class="main">
+    <mat-card class="example-card" >
+        <form [formGroup]="tweetForm" (ngSubmit)="postUpdate()">
+            <mat-card-content>
+                <div>
+                    <label>Tweet</label>
+                    <div>
+                        <input  type="text" autofocus  [formControlName]="'newTweet'"  value="{{tweetMessage}}">
+                    </div>
+                    <input type="submit" [disabled]="!tweetForm.valid" value="Update">
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</body>
+
+</html>

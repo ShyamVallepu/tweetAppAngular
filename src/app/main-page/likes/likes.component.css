@@ -1,0 +1,9 @@
+.like-card {
+    max-width: 100px;
+    max-height: 50px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: bisque;
+    margin-right: 0px;
+  }

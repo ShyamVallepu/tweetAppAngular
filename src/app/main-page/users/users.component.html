@@ -1,0 +1,25 @@
+<html>
+<header>
+    <app-header-bar></app-header-bar>
+</header>
+
+<body>
+    <input class="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="on"
+        placeholder="Search Username">
+    <div class="container">
+        <table class="usertable" class="table table-striped" border="2">
+            <tbody >
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">UserName</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let user of user | filter:searchText">
+                    <td>{{user["userName"]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
